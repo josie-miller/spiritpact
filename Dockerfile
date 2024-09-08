@@ -3,18 +3,15 @@ FROM golang:${GO_VERSION}-alpine as builder
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+ADD go.mod ./
 RUN go mod download
 
-COPY . ./
+ADD . ./
 RUN go build -o /go-app
 
 # Second stage
 FROM alpine:latest
 WORKDIR /root/
-
-COPY --from=builder /go-app .
 
 EXPOSE 8080
 
