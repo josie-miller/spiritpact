@@ -1,0 +1,11 @@
+{{ define "content" }}
+    <section>
+        <h1>Event Details</h1>
+        <p>Details about the specific outreach event.</p>
+        <form method="POST" action="/book">
+            <label for="time">Select Time:</label>
+            <input type="datetime-local" id="time" name="time">
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+    </section>
+{{ end }}

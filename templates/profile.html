@@ -1,0 +1,11 @@
+{{ define "content" }}
+    <section>
+        <h1>Your Profile</h1>
+        <p>Manage your profile information.</p>
+        <form method="POST" action="/profile">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="John Doe">
+            <button type="submit" class="btn">Update Profile</button>
+        </form>
+    </section>
+{{ end }}
